@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onRegister(View view){
         Intent intent = new Intent(this,Register.class);
+        intent.setAction(Register.ACTION_REGISTER);
         startActivityForResult(intent,REGISTER_REQUEST );
     }
 

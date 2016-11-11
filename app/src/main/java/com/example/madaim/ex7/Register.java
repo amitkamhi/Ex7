@@ -11,10 +11,17 @@ import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
+    public static final String ACTION_REGISTER = "com.Ex7.Register";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        Intent intent = getIntent();
+        if(intent == null || intent.getAction() == null || (!intent.getAction().equals(ACTION_REGISTER)) ){
+            Toast.makeText(getApplicationContext(), R.string.messageOnCreate, Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
     public void sendResult(View view){
